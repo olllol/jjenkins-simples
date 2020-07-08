@@ -1,0 +1,11 @@
+services:
+    jjenkins:
+      deploy:
+      image: docker.registry/library/jjenkins:latest
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /opt/jenkins/_data:/var/jenkins_home
+      ports:
+        - 80:8080
+        - 50000:50000
+version: '3.6'
